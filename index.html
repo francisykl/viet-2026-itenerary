@@ -79,6 +79,8 @@
     footer { margin-top:42px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
     @media (max-width:760px) { .hero { grid-template-columns:1fr; } .day { grid-template-columns:1fr; gap:5px; } .date { padding-top:8px; } .grid,.links,.checklist { grid-template-columns:1fr; } .weather-grid { grid-template-columns:repeat(2,1fr); } .card .tag { float:none; display:inline-block; margin-bottom:8px; } .map-experience { height:auto; aspect-ratio:3/2; } .map-stage { position:absolute; inset:0; } .map-title { top:12px; right:14px; left:auto; font-size:26px; text-align:right; } .map-stamps { display:none; } .cartoon-map { min-height:0; } .journey-story { grid-template-columns:minmax(0,1fr) auto; gap:7px; margin:8px; padding:9px 10px; } .story-kicker { grid-column:1/-1; font-size:9px; } .map-detail h3 { font-size:14px; }.map-detail p { display:none; }.map-detail .map-link { margin-left:auto; font-size:11px; }.story-controls { grid-column:2; grid-row:2; }.story-controls button { min-height:30px; padding:5px 8px; font-size:11px; }.poi.sapa { left:8%; top:14%; }.poi.halong { left:72%; top:37%; }.poi.hanoi { left:34%; top:33%; }.poi.hanoi2 { left:34%; top:62%; } .poi-label { font-size:10px; } }
     @media (max-width:430px) { .weather-grid { grid-template-columns:1fr; } }
+    /* Keep the widest mobile marker inside the illustrated map at 390px and below. */
+    @media (max-width:760px) { .poi.halong { left:68%; } }
   </style>
 </head>
 <body>
