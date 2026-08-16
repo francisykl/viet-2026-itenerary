@@ -24,6 +24,13 @@
     .flight small { color:#c8d5df; }
     .pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
     .pill { background:#fff; border:1px solid var(--line); border-radius:999px; padding:7px 12px; color:var(--muted); font-size:13px; }
+    .editbar { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+    button { border:0; border-radius:999px; padding:9px 14px; background:var(--sea); color:#fff; font:inherit; font-weight:800; cursor:pointer; }
+    button.secondary { background:#fff; color:var(--sea); border:1px solid #a9d2d1; }
+    button:hover { filter:brightness(.94); }
+    .editing [contenteditable="true"] { outline:2px dashed #9cc5c8; outline-offset:4px; background:#f5fbfa; border-radius:6px; }
+    .edit-hint { display:none; color:var(--sea); font-size:13px; margin-top:8px; }
+    .editing .edit-hint { display:block; }
     section { margin-top:32px; }
     .section-head { display:flex; justify-content:space-between; gap:18px; align-items:end; margin-bottom:14px; }
     .section-head p { color:var(--muted); max-width:560px; }
@@ -59,6 +66,9 @@
         <h1>Vietnam, with room to breathe.</h1>
         <p>Hanoi food and ready-made shirts, a rested Sapa stay, and a carefully buffered 2D1N Halong Bay cruise.</p>
         <div class="pills"><span class="pill">2 double-bed rooms</span><span class="pill">Bus over train</span><span class="pill">Free cancellation priority</span><span class="pill">Food · scenery · shopping</span></div>
+        <div class="editbar" aria-label="Itinerary editing controls"><button id="editToggle" type="button">Edit itinerary</button><button id="saveEdits" class="secondary" type="button">Save revision</button><button id="undoEdits" class="secondary" type="button">Undo</button><button id="redoEdits" class="secondary" type="button">Redo</button><button id="resetEdits" class="secondary" type="button">Reset</button><button id="printItinerary" class="secondary" type="button">Print / PDF</button></div>
+        <div class="edit-hint">Edit mode is on. Click any itinerary text below and type. Save stores your version in this browser only.</div>
+        <div id="revisionInfo" class="meta" style="margin-top:8px"></div>
       </div>
       <aside class="flight"><div class="label">Flights locked</div><strong>KUL → HAN</strong><div>12 Nov · 18:10–20:30</div><br><strong>HAN → KUL</strong><div>19 Nov · 21:00–01:20</div><small>AirAsia AK518 / AK519 · 4 passengers</small></aside>
     </header>
@@ -91,7 +101,7 @@
     <section>
       <div class="section-head"><div><h2>Comfort-first routes</h2><p>These routes use one natural walking loop at a time, then a planned rest. Times are intentionally padded for four people and six bags.</p></div></div>
       <div class="timeline">
-        <div class="day"><div class="date">12 Nov</div><div class="card"><span class="tag">Arrival buffer</span><h3>HAN → Old Quarter hotel</h3><ul><li>20:30 landing → allow 45–75 min for immigration and bags.</li><li>Book a 7-seater transfer for roughly 21:30–22:00; allow 35–60 min to the Old Quarter depending on traffic.</li><li>Eat within a 5–10 minute walk of the hotel; no sightseeing commitment tonight.</li></ul></div></div>
+        <div class="day"><div class="date">12 Nov</div><div class="card" data-editable><span class="tag">Arrival buffer</span><h3>HAN → Old Quarter hotel</h3><ul><li>20:30 landing → allow 45–75 min for immigration and bags.</li><li>Book a 7-seater transfer for roughly 21:30–22:00; allow 35–60 min to the Old Quarter depending on traffic.</li><li>Eat within a 5–10 minute walk of the hotel; no sightseeing commitment tonight.</li></ul></div></div>
         <div class="day"><div class="date">13 Nov</div><div class="card"><span class="tag">Walk loop · 4–5 hrs</span><h3>Egg coffee → cathedral → shirts → banh mi</h3><ul><li>08:30 breakfast near the hotel.</li><li>09:00–10:00 <strong>Cafe Giang</strong>; 10:10–10:35 St Joseph’s Cathedral.</li><li>10:45–12:15 walk Hang Gai first for nicer ready-made shirts, then Hang Dao/Hang Ngang for casual options.</li><li>12:15–13:00 Banh Mi 25 or Banh My Mama; return to the hotel by 13:30.</li><li>Keep 13:30–19:30 for shower, luggage, dinner, and a calm bus check-in. Be at the bus point 30 minutes early.</li></ul></div></div>
         <div class="day"><div class="date">14 Nov</div><div class="card"><span class="tag">Sapa · rest protected</span><h3>Room → Cat Cat → town → hotpot</h3><ul><li>Arrive around 05:00–06:00; go directly to the room booked from 13 Nov. Sleep until at least 09:00.</li><li>09:30 breakfast; 10:00–13:00 Cat Cat Village. Use a short Grab if the group wants to preserve energy; allow 30 minutes extra for queues and photos.</li><li>13:00–14:00 lunch near town, then 14:00–16:00 hotel rest.</li><li>16:00–17:30 Sun Plaza, Sapa Square, and a short market walk.</li><li>18:00 onward Sapa Night Market and Black Chicken Hotpot. Fansipan is only a substitute for Cat Cat if the forecast is unusually clear and everyone is rested.</li></ul></div></div>
         <div class="day"><div class="date">15 Nov</div><div class="card"><span class="tag">Transfer buffer</span><h3>Sapa slow morning → Hanoi</h3><ul><li>09:00–10:30 coffee/viewpoint or a short central market loop.</li><li>10:30–11:30 return to the hotel, pack, and check out; keep bags with the hotel if needed.</li><li>11:30 lunch near the hotel; reach the bus pickup point by 12:30 for a 13:00–14:00 departure.</li><li>Allow 6–8 hours including traffic and stops. On arrival, check in, eat nearby, and do not schedule another attraction.</li></ul></div></div>
@@ -173,5 +183,28 @@
 
     <footer>Prices and inventory change by date, room type, taxes, and supplier policy. Links open third-party booking pages; confirm the final total and cancellation deadline at checkout.</footer>
   </main>
+  <script>
+    (() => {
+      const key = 'vietnam-itinerary-revisions-v1';
+      const root = document.body;
+      const cards = () => [...document.querySelectorAll('.timeline .card')];
+      const snapshot = () => cards().map(card => card.innerHTML);
+      const revisionStore = () => { try { return JSON.parse(localStorage.getItem(key) || 'null') || {items:[], index:-1}; } catch (_) { return {items:[], index:-1}; } };
+      let state = revisionStore();
+      if (!state.items.length) { state.items = [{at:new Date().toISOString(), html:snapshot(), label:'Original itinerary'}]; state.index = 0; }
+      const persist = () => localStorage.setItem(key, JSON.stringify(state));
+      const renderInfo = () => { const el = document.getElementById('revisionInfo'); const current = state.items[state.index]; el.textContent = current ? `Revision ${state.index + 1} of ${state.items.length} · ${current.label} · ${new Date(current.at).toLocaleString()}` : ''; };
+      const apply = (item) => { if (!item) return; cards().forEach((card, i) => { if (item.html[i] !== undefined) card.innerHTML = item.html[i]; }); renderInfo(); };
+      const save = (label) => { state.items = state.items.slice(0, state.index + 1); state.items.push({at:new Date().toISOString(), html:snapshot(), label}); state.index = state.items.length - 1; persist(); renderInfo(); };
+      cards().forEach(card => card.setAttribute('data-editable', 'true'));
+      document.getElementById('editToggle').addEventListener('click', () => { root.classList.toggle('editing'); cards().forEach(card => card.setAttribute('contenteditable', root.classList.contains('editing'))); document.getElementById('editToggle').textContent = root.classList.contains('editing') ? 'Done editing' : 'Edit itinerary'; });
+      document.getElementById('saveEdits').addEventListener('click', () => save('Saved revision'));
+      document.getElementById('undoEdits').addEventListener('click', () => { if (state.index > 0) { state.index -= 1; apply(state.items[state.index]); persist(); } });
+      document.getElementById('redoEdits').addEventListener('click', () => { if (state.index < state.items.length - 1) { state.index += 1; apply(state.items[state.index]); persist(); } });
+      document.getElementById('resetEdits').addEventListener('click', () => { state.index = 0; apply(state.items[0]); persist(); });
+      document.getElementById('printItinerary').addEventListener('click', () => window.print());
+      apply(state.items[state.index]);
+    })();
+  </script>
 </body>
 </html>
