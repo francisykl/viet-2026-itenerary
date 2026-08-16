@@ -63,10 +63,26 @@
     .map-grid a { display:block; background:#fff; border:1px solid var(--line); border-radius:12px; padding:11px 13px; border-bottom:1px solid var(--line); }
     .map-grid a small { display:block; color:var(--muted); margin-top:2px; }
     .inline-map { color:#b14f72; font-style:italic; font-weight:700; border-bottom:1px dotted #b14f72; white-space:nowrap; }
+    .route-board { background:var(--rice); border:1px solid var(--line); border-radius:20px; padding:14px; overflow:hidden; }
+    .route-board img { display:block; width:100%; max-height:210px; object-fit:cover; border-radius:14px; border:1px solid #d9cdbd; }
+    .route-caption { color:var(--muted); font-size:13px; margin:10px 2px 14px; }
+    .route-track { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; position:relative; }
+    .route-track:before { content:""; position:absolute; left:8%; right:8%; top:20px; border-top:3px dashed #c7806d; opacity:.55; }
+    .route-stop { position:relative; z-index:1; }
+    .route-pin { width:42px; height:42px; display:grid; place-items:center; margin:0 auto 8px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:var(--coral); color:#fff; box-shadow:0 5px 12px #8b3a2f33; }
+    .route-pin span { transform:rotate(45deg); font-size:20px; }
+    .route-stop:nth-child(2) .route-pin { background:var(--sea); }
+    .route-stop:nth-child(3) .route-pin { background:#6b72a5; }
+    .route-stop:nth-child(4) .route-pin { background:#d28b31; }
+    .route-card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px; min-height:142px; }
+    .route-card h3 { font-size:15px; }
+    .route-card p { font-size:13px; color:#425369; }
+    .route-card .map-link { color:#b14f72; font-size:12px; font-style:italic; font-weight:800; }
+    .route-card .food { display:inline-block; margin-top:3px; color:var(--sea); font-weight:800; font-size:12px; }
     .checklist { display:grid; grid-template-columns:repeat(2,1fr); gap:10px 22px; color:#425369; }
     .checklist div:before { content:'✓'; color:var(--sea); font-weight:900; margin-right:9px; }
     footer { margin-top:42px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
-    @media (max-width:760px) { .hero { grid-template-columns:1fr; } .day { grid-template-columns:1fr; gap:5px; } .date { padding-top:8px; } .grid,.links,.checklist { grid-template-columns:1fr; } .card .tag { float:none; display:inline-block; margin-bottom:8px; } }
+    @media (max-width:760px) { .hero { grid-template-columns:1fr; } .day { grid-template-columns:1fr; gap:5px; } .date { padding-top:8px; } .grid,.links,.checklist { grid-template-columns:1fr; } .card .tag { float:none; display:inline-block; margin-bottom:8px; } .route-track { grid-template-columns:1fr; gap:10px; } .route-track:before { left:20px; right:auto; top:22px; bottom:22px; border-top:0; border-left:3px dashed #c7806d; } .route-stop { display:grid; grid-template-columns:42px 1fr; gap:10px; align-items:start; } .route-pin { margin:0; } }
   </style>
 </head>
 <body>
@@ -89,11 +105,25 @@
       <div class="timeline">
         <div class="day"><div class="date">12 Nov</div><div class="card"><span class="tag">Hanoi</span><h3>Arrive and settle in</h3><ul><li>Land 20:30; transfer to an Old Quarter hotel.</li><li>Light food only, then rest.</li></ul></div></div>
         <div class="day"><div class="date">13 Nov</div><div class="card"><span class="tag">Hanoi → Sapa</span><h3>Hanoi morning, sleeper bus at night</h3><ul><li>Egg coffee, cathedral, lunch, and a short shopping look.</li><li>Overnight sleeper bus around 21:00–22:00.</li></ul></div></div>
-        <div class="day"><div class="date">14 Nov</div><div class="card"><span class="tag">Sapa</span><h3>Rest first, then scenery</h3><ul><li>Arrive early; room is booked from 13 Nov for immediate access.</li><li>Cat Cat Village as the main activity; Fansipan only if weather and energy cooperate.</li></ul></div></div>
-        <div class="day"><div class="date">15 Nov</div><div class="card"><span class="tag">Sapa → Hanoi</span><h3>Easy Sapa morning, daytime bus home</h3><ul><li>Town, market, or café with a view.</li><li>Bus around 13:00–14:00; arrive Hanoi in the evening.</li></ul></div></div>
+        <div class="day"><div class="date">14 Nov</div><div class="card"><span class="tag">Sapa</span><h3>Rest first, then Fansipan</h3><ul><li>Arrive early; room is booked from 13 Nov for immediate access.</li><li>Fansipan is the main scenery choice; Cat Cat is the weather backup.</li></ul></div></div>
+        <div class="day"><div class="date">15 Nov</div><div class="card"><span class="tag">Sapa → Hanoi</span><h3>Views, early lunch, daytime bus home</h3><ul><li>Viettrekking Coffee → Sun Plaza → Sapa Square, then collect bags.</li><li>Bus around 13:00–14:00; arrive Hanoi roughly 19:00–22:00. No evening attraction planned.</li></ul></div></div>
         <div class="day"><div class="date">16–17 Nov</div><div class="card"><span class="tag">Halong Bay</span><h3>2D1N cruise</h3><ul><li>Hanoi Old Quarter pickup around 07:30–08:30.</li><li>Two private cabins; meals, kayaking, cave/island visits, and cooking class.</li><li>Return Hanoi around 16:00–17:00 on 17 Nov.</li></ul></div></div>
         <div class="day"><div class="date">18 Nov</div><div class="card"><span class="tag">Hanoi</span><h3>Shirts and food, no forced schedule</h3><ul><li>Ready-made shirt shopping around Hang Gai/Hang Dao.</li><li>Choose a food stop; water puppet show and Train Street remain optional.</li></ul></div></div>
-        <div class="day"><div class="date">19 Nov</div><div class="card"><span class="tag">Departure</span><h3>Buffer day and airport</h3><ul><li>Slow morning, final food or shopping.</li><li>Leave hotel around 17:00–18:00 for the 21:00 flight.</li></ul></div></div>
+        <div class="day"><div class="date">19 Nov</div><div class="card"><span class="tag">Departure</span><h3>Final shirts, then a protected airport run</h3><ul><li>Slow morning, final food or shopping.</li><li>Target hotel departure 17:00; 17:30 is the latest comfortable fallback for the 21:00 flight.</li></ul></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><h2>North Vietnam route board</h2><p>A playful one-screen overview of the journey: each pin opens Google Maps, while the food cue shows what fits naturally at that stop.</p></div></div>
+      <div class="route-board">
+        <img src="assets/vietnam-trip-collage.png" alt="Pastel illustrated collage of Hanoi street food, Sapa mountain scenery and Ha Long Bay kayaking" loading="lazy">
+        <p class="route-caption">Hanoi → overnight sleeper bus → Sapa / Fansipan → daytime bus → Hanoi → Halong Bay cruise → Hanoi airport</p>
+        <div class="route-track">
+          <article class="route-stop"><div class="route-pin"><span>🍜</span></div><div class="route-card"><h3>Hanoi · 12–13</h3><p>Old Quarter walk, egg coffee, cathedral and ready-made shirts. <strong>Grab: 35–60 min</strong> from HAN.</p><span class="food">Eat: Cafe Giang · Banh Mi 25</span><br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter%2C+Vietnam" target="_blank" rel="noopener">📍 Map the Old Quarter</a></div></article>
+          <article class="route-stop"><div class="route-pin"><span>⛰️</span></div><div class="route-card"><h3>Sapa · 14–15</h3><p>Sleep after arrival, then Fansipan; town loop and night market. <strong>Bus: 6–8 h</strong> each way.</p><span class="food">Eat: Black Chicken Hotpot · Viettrekking Coffee</span><br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sun+World+Fansipan+Legend%2C+Sapa%2C+Vietnam" target="_blank" rel="noopener">📍 Map Fansipan</a></div></article>
+          <article class="route-stop"><div class="route-pin"><span>🛶</span></div><div class="route-card"><h3>Halong Bay · 16–17</h3><p>2D1N cruise with kayaking, caves, meals and cooking class. <strong>Road transfer: ~2.5–3.5 h</strong> each way.</p><span class="food">Eat: included cruise meals · cooking class</span><br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Halong+Bay%2C+Vietnam" target="_blank" rel="noopener">📍 Map Halong Bay</a></div></article>
+          <article class="route-stop"><div class="route-pin"><span>🛍️</span></div><div class="route-card"><h3>Hanoi · 18–19</h3><p>Quality shirts, bun cha / pho, then a long airport buffer. <strong>Leave 17:00</strong> for the 21:00 flight.</p><span class="food">Eat: Bun Cha Huong Lien · Pho Thin · Cha Ca</span><br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Noi+Bai+International+Airport%2C+Hanoi%2C+Vietnam" target="_blank" rel="noopener">📍 Map Noi Bai Airport</a></div></article>
+        </div>
       </div>
     </section>
 
