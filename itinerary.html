@@ -135,6 +135,78 @@
     color: var(--muted);
     font-size: 0.82rem;
   }
+  .route-alts {
+    margin-top: 1rem;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    background: #faf7f3;
+    padding: 0 0.85rem 0.85rem;
+  }
+  .route-alts summary {
+    cursor: pointer;
+    font-weight: 650;
+    color: var(--accent-dark);
+    padding: 0.75rem 0 0.55rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .route-alts summary::-webkit-details-marker { display: none; }
+  .route-alts summary::before {
+    content: "▸";
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+  .route-alts[open] summary::before { content: "▾"; }
+  .route-alts summary em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  .route-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0 0 0.7rem;
+  }
+  .alt-cluster {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--time);
+    margin: 0.55rem 0 0.35rem;
+  }
+  .alt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.5rem;
+  }
+  .alt-place {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .alt-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-bottom: 0.15rem;
+  }
+  .alt-meta .tag {
+    background: #eee;
+    padding: 0.08rem 0.4rem;
+    border-radius: 4px;
+    color: #444;
+    font-weight: 600;
+  }
+  .alt-why { color: #555; font-size: 0.8rem; margin-top: 0.2rem; }
   @media print {
     body { background: white; color: black; font-size: 11pt; }
     header { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; color: white; }
@@ -145,6 +217,8 @@
     a.map-link { color: black; text-decoration: underline; }
     footer { margin-top: 1rem; }
     .container { max-width: 100%; padding: 0.5rem; }
+    .route-alts { display: none; }
+    .print-btn { display: none; }
   }
 </style>
 </head>
@@ -228,6 +302,28 @@
         <div class="alts"><span>Food</span> Busy Banh Mi stall nearby if hungry (RM 3–6). Skip big dinner.</div>
       </div>
       <div class="note">Goal: sleep early. Tomorrow has a full morning + late bus.</div>
+      <details class="route-alts">
+        <summary>Nearby / on-route if slack <em>3 ideas · lake &amp; hotel only</em></summary>
+        <p class="route-hint">Arrival night is light. Only add if you’re already at the lake and still hungry. Don’t Grab anywhere.</p>
+        <div class="alt-cluster">On the Hoan Kiem walk (5–10 min from Prince II)</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>5–10 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+Hang+Ca+Hanoi" target="_blank">Bánh Mì 25 / Bánh Mỹ Mama</a>
+            <div class="alt-why">Named stall if the “busy bánh mì” nearby is shut. RM 4–8. Skip if tired.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Xoi+Yen+35B+Nguyen+Huu+Huan+Hanoi" target="_blank">Xôi Yến</a>
+            <div class="alt-why">Sticky rice, cheap local favourite. Only if still hungry after check-in. RM 5–10.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">See</span><span>on the lake</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ngoc+Son+Temple+Hoan+Kiem" target="_blank">Ngọc Sơn Temple</a>
+            <div class="alt-why">Island temple via The Húc Bridge — you’re already there. RM 2. Skip if you just want the walk.</div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -279,6 +375,56 @@
       <div class="note">
         <strong>Bus (13 Nov night):</strong> Pickup from Prince II Hotel. Be ready in lobby by ~22:30–22:45 for the 23:15 departure. Drop-off at Freesia Hotel, Sapa. Lower single cabins ×4.
       </div>
+      <details class="route-alts">
+        <summary>Nearby / on-route if slack <em>8 ideas · shopping loop + afternoon</em></summary>
+        <p class="route-hint">Morning loop is Cathedral → Hàng Gai → Hàng Đào / Ngang → Hàng Mã. Add only if you’re already on that street. Afternoon (13:30–22:30) is free near the hotel — no new districts.</p>
+        <div class="alt-cluster">On the shopping loop (morning)</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>at Cathedral</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hang+Bong+Street+Hanoi" target="_blank">Hàng Bông / St Joseph area</a>
+            <div class="alt-why">Shirts around the cathedral. You’re already here at 09:45. Don’t extra-walk for it.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>on Hàng Gai</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ginkgo+Hang+Gai+Hanoi" target="_blank">Ginkgo / Orange</a>
+            <div class="alt-why">Named silk/shirt shops on Silk Street. Better quality than Hang Đào stalls.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>alleys off Hang Đào</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+Hanoi" target="_blank">Bánh Mì 25 / Bánh Mỹ Mama</a>
+            <div class="alt-why">Snack on the clothes streets if breakfast was light. RM 4–8. Don’t sit down long.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Tofu+39+Hanoi" target="_blank">Tofu 39</a>
+            <div class="alt-why">Light local tofu in Old Quarter alleys. RM 8–15. Only if Obama lunch is a skip.</div>
+          </div>
+        </div>
+        <div class="alt-cluster">Afternoon near hotel (13:30–22:30 rest window)</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Tea</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Dong+Kinh+Tea+House+Hanoi" target="_blank">Đông Kinh Tea House</a>
+            <div class="alt-why">Quiet tea break between walks. RM 10–20. Fits the rest window. (No coffee — you don’t drink it.)</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>on shopping streets</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Maison+Marou+Flagship+Hanoi" target="_blank">Maison Marou Flagship</a>
+            <div class="alt-why">Vietnamese chocolate + gifts. RM 15–30. Same Old Quarter streets, not a detour.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>10–20 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=WinMart+Hoan+Kiem+Hanoi" target="_blank">Win Mart</a>
+            <div class="alt-why">Water / snacks / bus-night supplies before the sleeper. Easy and useful.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Spa</span><span>10–20 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Non+La+Healing+Spa+Hanoi" target="_blank">Non La Healing Spa</a>
+            <div class="alt-why">If legs are cooked after shopping. RM 50–100+. Book; walk-ins wait. Must be back for 22:30 lobby.</div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -326,6 +472,48 @@
         <div class="alts"><span>Food</span> Red Dzao House (black chicken hotpot), A Phủ (salmon hotpot), or market snacks (cơm lam, xôi bảy màu, grilled pig). No Michelin in Sapa.</div>
       </div>
       <div class="note">Optional only if ahead of schedule: Muong Hoa valley viewpoints or Cat Cat Village (opposite direction). Don’t try both after Fansipan.</div>
+      <details class="route-alts">
+        <summary>Nearby / on-route if slack <em>7 ideas · town square + Cầu Mây</em></summary>
+        <p class="route-hint">Fansipan + Mong Village are the day. These extras sit on the Stone Church / Sun Plaza / night-market loop you’re already doing at 16:30. Cat Cat is the opposite valley — only if you skip the mountain.</p>
+        <div class="alt-cluster">On the evening town loop (Church → Sun Plaza → Night Market)</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>5–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sapa+Ethnic+Market+Cau+May" target="_blank">Ethnic Market + Cầu Mây St</a>
+            <div class="alt-why">Hmong/Dao brocade, indigo, embroidered shirts. More authentic than the night market stalls. Daytime–evening.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>on Cầu Mây</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Indigo+Cat+Sapa" target="_blank">Indigo Cat / small handmade shops</a>
+            <div class="alt-why">Fairer-trade Hmong shirts, bags, scarves. RM 30–100+. Same street as the ethnic stalls.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>at the square</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sun+Plaza+Sapa" target="_blank">Sun Plaza mall</a>
+            <div class="alt-why">You’re already here at 16:30. Convenient but tourist prices — use only if rain.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Walk</span><span>10 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sapa+Lake" target="_blank">Sapa Lake</a>
+            <div class="alt-why">Small town lake loop. Quiet filler if you finish church photos early. Free.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Photo</span><span>near town</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Swing+Sapa" target="_blank">Swing Sapa</a>
+            <div class="alt-why">Quick photo stop. Small fee. Only if you’re already next to it — don’t transfer for it.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">View</span><span>5–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Viettrekking+Coffee+Sapa" target="_blank">Moana Café / Viettrekking</a>
+            <div class="alt-why">View stop (tea/soft drink — you skip coffee). RM 10–25. Moana is already on the Mong Village road.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>town lunch</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Dac+Kim+Sapa" target="_blank">Bún Chả Đắc Kim</a>
+            <div class="alt-why">Simple town lunch if you want bún chả in Sapa. RM 15–25. Confirm it’s open — not a detour.</div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -353,6 +541,28 @@
         <strong class="time">13:00</strong> — Return bus pickup from Freesia Hotel. Drop-off at Prince II Hotel, Hanoi.
       </div>
       <div class="note">Return is booked for 15 Nov 13:00 from Freesia Hotel → Prince II Hotel. Be ready by 12:30.</div>
+      <details class="route-alts">
+        <summary>Nearby / on-route if slack <em>3 ideas · must be back by 12:30</em></summary>
+        <p class="route-hint">Morning only, inside Sapa town. Cat Cat is 20–40 min each way — too tight before a 13:00 bus unless you skip everything else.</p>
+        <div class="alt-cluster">Town centre before checkout</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>5–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sapa+Ethnic+Market+Cau+May" target="_blank">Ethnic Market + Cầu Mây</a>
+            <div class="alt-why">Last textiles/shirts if you skipped last night. Stay in town. Be packing by 12:00.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>at the square</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sun+Plaza+Sapa" target="_blank">Sun Plaza last look</a>
+            <div class="alt-why">Already on the 10:00 plan. Pricier souvenirs only if rain.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">See</span><span>short Grab</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Muong+Hoa+Valley+Sapa" target="_blank">Mường Hoa viewpoint</a>
+            <div class="alt-why">Already the optional on this day. Rice terraces, best light morning. Not Cat Cat — opposite direction.</div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -418,6 +628,76 @@
           <li>Street food dinner around the lake</li>
         </ul>
       </div>
+      <details class="route-alts">
+        <summary>Nearby / on-route if slack <em>9 ideas · Old Quarter only</em></summary>
+        <p class="route-hint">Same walking loop as 13 Nov: lake → Cathedral → Hàng Gai → Hàng Đào / Ngang → Hàng Mã / Đồng Xuân. Add only what’s on that loop or 10–15 min from Prince II. Temple of Literature / Hoa Lò / Citadel need a Grab + 1.5 hrs — not on-route.</p>
+        <div class="alt-cluster">On the shopping loop</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>at Cathedral</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hang+Bong+Street+Hanoi" target="_blank">Hàng Bông / St Joseph area</a>
+            <div class="alt-why">You’re at the cathedral at ~09:20. Extra shirt shops without a detour.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>on Hàng Gai</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ginkgo+Hang+Gai+Hanoi" target="_blank">Ginkgo / Orange</a>
+            <div class="alt-why">Named quality shirt/silk shops on Silk Street. Do these before Hang Đào cheap stalls.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Dessert</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kem+Bo+Xuka+Hanoi" target="_blank">Kem Bơ Xuka / Kem Karamen</a>
+            <div class="alt-why">Avocado / caramel ice cream near the lake. RM 5–12. Fits 14:30 dessert slot.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Chocolate</span><span>on shopping streets</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Maison+Marou+Flagship+Hanoi" target="_blank">Maison Marou Flagship</a>
+            <div class="alt-why">Already on the 14:30 plan. Gifts + chocolate. RM 15–30.</div>
+          </div>
+        </div>
+        <div class="alt-cluster">Food / rest within 15 min of hotel</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Thang+Long+6B+Duong+Thanh+Hanoi" target="_blank">Chả Cá Thăng Long</a>
+            <div class="alt-why">Already the lunch alt. Turmeric dill catfish, one dish. RM 25–40. Bib Gourmand.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>10–20 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Pho+Thin+Lo+Duc+Hanoi" target="_blank">Phở Thin (Lò Đúc or Bờ Hồ)</a>
+            <div class="alt-why">Famous phở if you want a second bowl vs Lý Quốc Sư. RM 10–18. Breakfast best.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Tofu+39+Hanoi" target="_blank">Tofu 39</a>
+            <div class="alt-why">Light alley tofu. RM 8–15. Good if someone wants a break from noodles.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Tea</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Dong+Kinh+Tea+House+Hanoi" target="_blank">Đông Kinh Tea House</a>
+            <div class="alt-why">Quiet sit-down between shopping and evening. RM 10–20. Tea, not coffee.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Brunch</span><span>15–20 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Hanoi+Social+Club" target="_blank">The Hanoi Social Club</a>
+            <div class="alt-why">Western-friendly rest stop. RM 20–40. Only if the group needs a pause.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>15–25 min / Grab</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Oc+Di+Tu+Hanoi" target="_blank">Ốc Dì Tư / Ốc Tô Sài Gòn</a>
+            <div class="alt-why">Evening snails. RM 15–30. Only if you pick “street food dinner” over puppet / train street.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Spa</span><span>10–20 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Non+La+Healing+Spa+Hanoi" target="_blank">Non La Healing Spa</a>
+            <div class="alt-why">Fits 14:30–17:00 free slot. RM 50–100+. Book ahead.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>10–20 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=WinMart+Hoan+Kiem+Hanoi" target="_blank">Win Mart</a>
+            <div class="alt-why">Snacks / water / last supplies. Not a destination — grab if you pass it.</div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
@@ -441,6 +721,28 @@
         <strong class="time">18:00 at airport</strong> — 3-hour buffer for international check-in. Flight AK519 departs 21:00.
       </div>
       <div class="note">Check in online via AirAsia the day before. Have passports and boarding passes ready. 4 pax.</div>
+      <details class="route-alts">
+        <summary>Nearby / on-route if slack <em>3 ideas · stay in Old Quarter</em></summary>
+        <p class="route-hint">Morning only, walking distance. Leave hotel 16:45–17:00. No new neighbourhoods.</p>
+        <div class="alt-cluster">On the last lake circuit</div>
+        <div class="alt-grid">
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>10–15 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Xoi+Yen+35B+Nguyen+Huu+Huan+Hanoi" target="_blank">Xôi Yến</a>
+            <div class="alt-why">Sticky rice breakfast/snack. RM 5–10. Near the lake streets.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Food</span><span>5–10 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+Hanoi" target="_blank">Bánh Mì 25 / Bánh Mỹ Mama</a>
+            <div class="alt-why">Last cheap sandwich before the airport run. RM 4–8.</div>
+          </div>
+          <div class="alt-place">
+            <div class="alt-meta"><span class="tag">Shop</span><span>8–12 min</span></div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hang+Ma+Street+Hanoi" target="_blank">Hàng Mã last souvenirs</a>
+            <div class="alt-why">Paper / lanterns if you missed them on 13 or 18. Only if you pass it on the lake walk.</div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
