@@ -132,35 +132,317 @@
     footer { margin-top: 1rem; }
     .container { max-width: 100%; padding: 0.5rem; }
   }
-  @media (max-width: 600px) {
-    header h1 { font-size: 1.45rem; }
-    .day-header { flex-direction: column; gap: 0.25rem; }
-  }
 </style>
 </head>
 <body>
 <header>
   <h1>Vietnam Itinerary</h1>
-  <p>12 – 19 November 2026 · 4 people · Printable version</p>
+  <p>12 – 19 November 2026 · 4 people · Followable with time ranges</p>
   <p>Hanoi · Sapa · Halong Bay</p>
 </header>
 
 <div class="container">
+
   <div class="overview">
     <h2>Bookings Snapshot</h2>
     <div class="bookings">
       <div class="booking-card"><strong>Flights</strong><br>KUL→HAN 12 Nov 20:30<br>HAN→KUL 19 Nov 21:00</div>
-      <div class="booking-card"><strong>Hanoi</strong><br>Prince II Hotel<br>Old Quarter (Hang Giay)</div>
-      <div class="booking-card"><strong>Sapa</strong><br>Freesia Hotel<br>13–15 Nov</div>
+      <div class="booking-card"><strong>Hanoi</strong><br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Prince+II+Hotel+Hang+Giay+Hanoi" target="_blank">Prince II Hotel</a><br>Old Quarter (Hang Giay)</div>
+      <div class="booking-card"><strong>Sapa</strong><br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Freesia+Hotel+Sapa" target="_blank">Freesia Hotel</a><br>13–15 Nov</div>
       <div class="booking-card"><strong>Sapa bus</strong><br>G8 Cabin Sleeper<br>Round-trip · 13 Nov 23:15</div>
       <div class="booking-card"><strong>Halong</strong><br>Hera Boutique 2D1N<br>16–17 Nov</div>
     </div>
     <div class="note">Freesia Sapa starts 13 Nov. You arrive early 14 Nov (night of 13th on the bus). Confirm early check-in or luggage storage with the hotel.</div>
   </div>
-  <p style="text-align:center; padding:1rem;">Full day-by-day plan with time ranges, maps, and notes is in the main itinerary.html. This print version is optimized for printing.</p>
+
+  <!-- IMPORTANT NOTES -->
+  <div class="overview">
+    <h2>Important Notes – Buses, Check-in & Timing</h2>
+    <div class="note">
+      <strong>G8 Cabin Sleeper Bus (Hanoi ↔ Sapa) — exact booking details</strong><br>
+      • <strong>Outward (13 Nov 23:15):</strong> Pickup from <strong>Prince II Hotel</strong>, 42B P. Hàng Giầy, Phố cổ Hà Nội. Drop-off at <strong>Freesia Hotel</strong>, 3 Vuon Treo, Sapa.<br>
+      • Be ready at the hotel lobby by <strong>~22:30–22:45</strong> (confirm exact shuttle time with G8 the day before).<br>
+      • <strong>Return (15 Nov 13:00):</strong> Pickup from <strong>Freesia Hotel</strong>, 3 Vuon Treo. Drop-off at <strong>Prince II Hotel</strong>, Hanoi Old Quarter.<br>
+      • Be at Freesia by <strong>~12:30</strong> for the 13:00 return.<br>
+      • Lower single cabins ×4. Luggage ≤20 kg + small bag. No onboard toilet — rest stops only.<br>
+      • <strong>Hotline (problems):</strong> +84 382 995 611 / +84 358 482 611 (WhatsApp/Viber). Contact promptly if any issue.
+    </div>
+    <div class="note">
+      <strong>Hotels</strong><br>
+      • Prince II Hotel (Hanoi): typical check-in from 14:00–15:00, check-out by 12:00. On arrival night (12 Nov) you can check in late. On 15 Nov and 17 Nov you’ll arrive later — message the hotel if you expect to arrive after 22:00.<br>
+      • Freesia Hotel Sapa: check-in usually from 14:00. You arrive early morning 14 Nov. Contact them in advance to confirm early check-in or safe luggage storage until rooms are ready.
+    </div>
+    <div class="note">
+      <strong>Halong Cruise (Hera Boutique)</strong><br>
+      • Pickup from Hanoi hotel is typically 07:45–08:30 on 16 Nov. Be ready in the lobby by 07:30. Confirm exact pickup time and meeting point with the cruise operator the day before.<br>
+      • Return to Hanoi is usually late afternoon/evening on 17 Nov.
+    </div>
+    <div class="note">
+      <strong>Flights – stay on time</strong><br>
+      • <strong>Arrival 12 Nov (AK518 lands ~20:30):</strong> Immigration + baggage 45–75 min. Leave airport ~21:30–22:00. Grab to hotel ~45 min. Reach Prince II ~22:15–22:45.<br>
+      • <strong>Departure 19 Nov (AK519 21:00):</strong><br>
+      &nbsp;&nbsp;– Leave hotel: <strong>16:45–17:00</strong><br>
+      &nbsp;&nbsp;– Reach Noi Bai: by <strong>18:00</strong> (Grab 45–60 min + traffic buffer)<br>
+      &nbsp;&nbsp;– At airport by 18:00 for 3-hour international check-in buffer.<br>
+      • Check in online via AirAsia app the day before. 4 passengers: LAI KUAN YIP + 3.
+    </div>
+  </div>
+
+  <!-- DAY 12 -->
+  <div class="day">
+    <div class="day-header">
+      <h2>12 Nov · Arrival Hanoi</h2>
+      <span class="badge">Light only</span>
+    </div>
+    <div class="day-content">
+      <div class="gallery">
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/ed/88/67/lake-at-night.jpg?w=900&h=500&s=1" alt="Hoan Kiem Lake night">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hoan+Kiem+Lake+Hanoi" target="_blank">Hoan Kiem Lake</a></div>
+        </div>
+        <div>
+          <img src="https://vj-prod-website-cms.s3.ap-southeast-1.amazonaws.com/agajhf-1751956757041.jpg" alt="Red Bridge">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Huc+Bridge+Hoan+Kiem" target="_blank">The Huc Bridge</a></div>
+        </div>
+      </div>
+      <div class="time-block">
+        <strong class="time">~20:30–21:15</strong> — Arrive Noi Bai, Grab to Prince II Hotel (Hang Giay, ~45 min). Check in, drop bags.
+      </div>
+      <div class="time-block">
+        <strong class="time">21:15–22:00</strong> — Short Hoan Kiem Lake walk only (5–10 min from hotel). Open 24h. Don’t overdo it.
+        <div class="alts"><span>Food</span> Busy Banh Mi stall nearby if hungry (RM 3–6). Skip big dinner.</div>
+      </div>
+      <div class="note">Goal: sleep early. Tomorrow has a full morning + late bus.</div>
+    </div>
+  </div>
+
+  <!-- DAY 13 -->
+  <div class="day">
+    <div class="day-header">
+      <h2>13 Nov · Hanoi morning → Sapa night bus</h2>
+      <span class="badge">Must finish by ~22:30</span>
+    </div>
+    <div class="day-content">
+      <div class="gallery">
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/32/bb/34/nha-th-l-n-ha-n-i-40.jpg?w=1200&h=-1&s=1" alt="St Joseph Cathedral">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=St+Joseph+Cathedral+Hanoi" target="_blank">St Joseph Cathedral</a></div>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/2a/9d/51/hang-gai-05.jpg?w=900&h=500&s=1" alt="Hang Gai">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hang+Gai+Street+Hanoi" target="_blank">Hang Gai (Silk Street)</a></div>
+        </div>
+        <div>
+          <img src="https://media.urbanistnetwork.com/saigoneer/article-images/legacy/ty4SBzSb.jpg" alt="Obama Bun Cha">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Huong+Lien+Hanoi" target="_blank">Bún Chả Hương Liên</a></div>
+        </div>
+      </div>
+      <div class="time-block">
+        <strong class="time">08:30–09:15</strong> — Breakfast: ★ Bánh Cuốn Gia Truyền Thanh Vân (14 Hàng Gà, 3–8 min walk). Paper-thin rice rolls, Bib Gourmand. Pork ~RM 7.50 / chicken ~RM 8.30.
+        <div class="alts"><span>Alt</span> Phở 10 Lý Quốc Sư (Bib Gourmand) or any busy phở stall.</div>
+      </div>
+      <div class="time-block">
+        <strong class="time">09:15–09:45</strong> — Hoan Kiem Lake (pass it on the way north).
+      </div>
+      <div class="time-block">
+        <strong class="time">09:45–10:15</strong> — St Joseph Cathedral (photo stop, free outside). Twin towers, classic Old Quarter shot.
+      </div>
+      <div class="time-block">
+        <strong class="time">10:15–11:40</strong> — Shopping loop: Hàng Gai (Silk Street, nicer shirts first) → Hàng Đào + Hàng Ngang (cheaper). Negotiate.
+        <div class="alts"><span>Alt</span> Skip Hang Ngang if short on time; focus on Hang Gai only.</div>
+      </div>
+      <div class="time-block">
+        <strong class="time">11:40–12:00</strong> — Quick pass Hàng Mã (souvenirs/lanterns) if energy left.
+      </div>
+      <div class="time-block">
+        <strong class="time">12:00–13:15</strong> — Lunch: ★ Bún Chả Hương Liên (Obama shop, 24 Lê Văn Hưu). Grilled pork + noodles. Film the glass-cased Obama table. RM 25–40.
+        <div class="alts"><span>Alt</span> Bún Chả Ta (air-con, Bib Gourmand, closer) or any busy bún chả stall.</div>
+      </div>
+      <div class="time-block">
+        <strong class="time">13:30–22:30</strong> — Free time / rest / packing. Grab to bus pickup ~22:30.
+      </div>
+      <div class="note">
+        <strong>Bus (13 Nov night):</strong> Pickup from Prince II Hotel. Be ready in lobby by ~22:30–22:45 for the 23:15 departure. Drop-off at Freesia Hotel, Sapa. Lower single cabins ×4.
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 14 -->
+  <div class="day">
+    <div class="day-header">
+      <h2>14 Nov · Full day Sapa</h2>
+      <span class="badge">Fansipan main</span>
+    </div>
+    <div class="day-content">
+      <div class="gallery">
+        <div>
+          <img src="https://d122axpxm39woi.cloudfront.net/images/guides/origin/647aba9dc4f90.jpg" alt="Fansipan cable car">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Fansipan+Cable+Car+Sapa" target="_blank">Fansipan Cable Car</a></div>
+        </div>
+        <div>
+          <img src="https://www.vietnam-tour.biz/wp-content/uploads/2018/12/An-Insiders-Guide-to-Fansipan-Sapa-Cable-Car.jpg" alt="Fansipan summit">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Fansipan+Summit+Sapa" target="_blank">Fansipan Summit</a></div>
+        </div>
+        <div>
+          <img src="https://static.wixstatic.com/media/c96a67_69ed4062825a4f8b918941df4ccccf3b~mv2.jpg/v1/fill/w_980,h_735,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c96a67_69ed4062825a4f8b918941df4ccccf3b~mv2.jpg" alt="Sapa Stone Church">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sapa+Stone+Church" target="_blank">Sapa Stone Church</a></div>
+        </div>
+        <div>
+          <img src="https://img.avianexperiences.com/attractions/fee4664f-60b1-44aa-8e0f-e41c673cbbc1" alt="Sapa Night Market">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sapa+Night+Market" target="_blank">Sapa Night Market</a></div>
+        </div>
+      </div>
+      <div class="time-block">
+        <strong class="time">06:45–07:30</strong> — Hotel breakfast / Sun Plaza area. Early start.
+      </div>
+      <div class="time-block">
+        <strong class="time">07:30–12:30</strong> — ★ FANSIPAN (main plan). Cable car + summit. Weather check with hotel first if foggy. Three tickets: mountain train + cable car + summit steps/funicular ≈ RM 150–230. Best clear views in morning.
+        <div class="alts"><span>If fog</span> Do Mong Village / coaster first, or just town loop. Don’t force the mountain.</div>
+      </div>
+      <div class="time-block">
+        <strong class="time">13:30–15:30</strong> — Mong Village block: Alpine Coaster (Ban Mong, ~RM 33, 3–5 min ride) + walk village lanes (Black Hmong houses, free) + herbal tea (RM 3–7). One road, no backtracking.
+        <div class="alts"><span>Optional</span> Moana Sapa photo park (golden hand, infinity swing, RM 13–17) or rose garden if on the way.</div>
+      </div>
+      <div class="time-block">
+        <strong class="time">16:30–17:30</strong> — Stone Church + Sun Plaza square. Free photos.
+      </div>
+      <div class="time-block">
+        <strong class="time">17:30–20:00</strong> — Sapa Night Market + dinner.
+        <div class="alts"><span>Food</span> Red Dzao House (black chicken hotpot), A Phủ (salmon hotpot), or market snacks (cơm lam, xôi bảy màu, grilled pig). No Michelin in Sapa.</div>
+      </div>
+      <div class="note">Optional only if ahead of schedule: Muong Hoa valley viewpoints or Cat Cat Village (opposite direction). Don’t try both after Fansipan.</div>
+    </div>
+  </div>
+
+  <!-- DAY 15 -->
+  <div class="day">
+    <div class="day-header">
+      <h2>15 Nov · Sapa morning → Hanoi</h2>
+      <span class="badge">Return day</span>
+    </div>
+    <div class="day-content">
+      <div class="gallery">
+        <img src="https://statics.vinpearl.com/muong-hoa-valley-01_1682414595.jpg" alt="Muong Hoa Valley">
+        <img src="https://vietnamdiscovery.com/wp-content/uploads/2020/10/Cat-Cat-village-a21tour.com_.jpg" alt="Cat Cat Village">
+      </div>
+      <div class="time-block">
+        <strong class="time">Morning (flexible)</strong> — Sleep in / hotel breakfast. Light only.
+      </div>
+      <div class="time-block">
+        <strong class="time">10:00–12:00</strong> — Sun Plaza / market last look or short free photos. Optional: quick Muong Hoa viewpoint or gentle valley walk if energy and weather good.
+      </div>
+      <div class="time-block">
+        <strong class="time">12:00–12:30</strong> — Pack, check out of Freesia, and be ready for bus pickup.
+      </div>
+      <div class="time-block">
+        <strong class="time">13:00</strong> — Return bus pickup from Freesia Hotel. Drop-off at Prince II Hotel, Hanoi.
+      </div>
+      <div class="note">Return is booked for 15 Nov 13:00 from Freesia Hotel → Prince II Hotel. Be ready by 12:30.</div>
+    </div>
+  </div>
+
+  <!-- DAYS 16-17 -->
+  <div class="day">
+    <div class="day-header">
+      <h2>16–17 Nov · Halong Bay Cruise</h2>
+      <span class="badge">Hera Boutique 2D1N</span>
+    </div>
+    <div class="day-content">
+      <div class="gallery">
+        <div>
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/13/cc/c7/80.jpg" alt="Halong cruise">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ha+Long+Bay" target="_blank">Ha Long Bay</a></div>
+        </div>
+        <div>
+          <img src="https://dynamic-media.tacdn.com/media/photo-o/31/79/5a/18/caption.jpg?w=700&h=500&s=1" alt="Halong Bay">
+          <div class="place-label"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Tuan+Chau+Marina+Ha+Long" target="_blank">Tuan Chau Marina</a></div>
+        </div>
+      </div>
+      <div class="time-block">
+        <strong class="time">16 Nov ~08:00</strong> — Hotel pickup from Prince II → Halong harbour. Board, welcome drink, lunch on board.
+      </div>
+      <div class="time-block">
+        <strong class="time">Afternoon–evening</strong> — Kayaking, Sung Sot Cave, Titop Island viewpoint, sunset, dinner, optional squid fishing / tai chi next morning.
+      </div>
+      <div class="time-block">
+        <strong class="time">17 Nov afternoon/evening</strong> — Return to Hanoi. Check back into Prince II Hotel.
+      </div>
+      <div class="note">All meals and main activities included. Private cabin. No extra food cost these two days.</div>
+    </div>
+  </div>
+
+  <!-- DAY 18 -->
+  <div class="day">
+    <div class="day-header">
+      <h2>18 Nov · Full free day Hanoi</h2>
+      <span class="badge">Shopping + food priority</span>
+    </div>
+    <div class="day-content">
+      <div class="gallery">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/2a/9d/51/hang-gai-05.jpg?w=900&h=500&s=1" alt="Old Quarter">
+        <img src="https://vietnamdiscovery.com/wp-content/uploads/2019/10/Inside-of-St-Josephs-Cathedral.jpg" alt="Cathedral interior">
+      </div>
+      <div class="time-block">
+        <strong class="time">08:00–09:00</strong> — Breakfast: ★ Bánh Cuốn Gia Truyền Thanh Vân again or ★ Phở 10 Lý Quốc Sư / Phở Gia Truyền.
+      </div>
+      <div class="time-block">
+        <strong class="time">09:00–12:00</strong> — Shopping first: Hang Gai (nice silk/shirts) → Hang Dao + Hang Ngang (cheaper) → Hang Ma + Đồng Xuân Market. Bargain politely.
+      </div>
+      <div class="time-block">
+        <strong class="time">12:30–14:00</strong> — Lunch: ★ Bún Chả Ta (air-con, Bib Gourmand) or any good bún chả / pho.
+        <div class="alts"><span>Alt</span> Cha Ca Thang Long (grilled turmeric fish) if you want something different.</div>
+      </div>
+      <div class="time-block">
+        <strong class="time">14:30–17:00</strong> — Free: more shopping, rest, Maison Marou chocolate, or quiet cafe.
+      </div>
+      <div class="time-block">
+        <strong class="time">17:30–21:00</strong> — Evening options (pick one):
+        <ul style="margin:0.3rem 0; padding-left:1.2rem;">
+          <li>Thang Long Water Puppet (shows ~17:20 / 18:30 / 20:00, RM 15–30) then lake night walk</li>
+          <li>Train Street + drink (ask cafe for exact train time that evening)</li>
+          <li>Street food dinner around the lake</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 19 -->
+  <div class="day">
+    <div class="day-header">
+      <h2>19 Nov · Departure</h2>
+      <span class="badge">Leave hotel by 17:00–18:00</span>
+    </div>
+    <div class="day-content">
+      <div class="time-block">
+        <strong class="time">Morning (light)</strong> — Last Hoan Kiem walk, quick coffee, or last-minute souvenirs if needed.
+      </div>
+      <div class="time-block">
+        <strong class="time">16:45–17:00</strong> — Leave Prince II Hotel.
+      </div>
+      <div class="time-block">
+        <strong class="time">~17:45–18:15</strong> — Reach Noi Bai Airport (Grab 45–60 min).
+      </div>
+      <div class="time-block">
+        <strong class="time">18:00 at airport</strong> — 3-hour buffer for international check-in. Flight AK519 departs 21:00.
+      </div>
+      <div class="note">Check in online via AirAsia the day before. Have passports and boarding passes ready. 4 pax.</div>
+    </div>
+  </div>
+
+  <div class="overview">
+    <h2>Food Quick Reference (Hanoi)</h2>
+    <ul style="margin:0.4rem 0; padding-left:1.2rem; font-size:0.92rem;">
+      <li><strong>Breakfast</strong> — Bánh Cuốn Gia Truyền Thanh Vân (Bib Gourmand), Phở 10 Lý Quốc Sư, Phở Gia Truyền</li>
+      <li><strong>Lunch</strong> — Bún Chả Hương Liên (Obama), Bún Chả Ta (Bib Gourmand)</li>
+      <li><strong>Snacks</strong> — Banh Mi stalls, xôi, nước mía, kem</li>
+      <li><strong>Sapa dinner</strong> — Red Dzao House, A Phủ, black chicken hotpot, night market</li>
+    </ul>
+  </div>
+
 </div>
+
 <footer>
-  Vietnam 12–19 Nov 2026 · Printable version
+  Vietnam 12–19 Nov 2026 · Time ranges are guides — adjust if weather or energy changes. Stay flexible on optional items.
 </footer>
 </body>
 </html>
