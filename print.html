@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam Itinerary 12–19 Nov 2026 | Printable</title>
+<style>
+  :root {
+    --bg: #f8f5f0;
+    --card: #ffffff;
+    --accent: #c45c26;
+    --accent-dark: #8b3e1a;
+    --text: #2c2c2c;
+    --muted: #6b6b6b;
+    --border: #e8e0d8;
+    --time: #1a3a5c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d5a7b 50%, #c45c26 100%);
+    color: white;
+    padding: 2.2rem 1.5rem 1.8rem;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 0.3rem; font-size: 1.9rem; font-weight: 700; }
+  header p { margin: 0.2rem 0; opacity: 0.92; font-size: 0.95rem; }
+  .container { max-width: 980px; margin: 0 auto; padding: 1.4rem; }
+  .overview {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.4rem;
+    border: 1px solid var(--border);
+  }
+  .overview h2 { margin-top: 0; color: var(--accent-dark); font-size: 1.2rem; }
+  .day {
+    background: var(--card);
+    border-radius: 14px;
+    margin-bottom: 1.6rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .day-header {
+    background: #1a3a5c;
+    color: white;
+    padding: 0.9rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .day-header h2 { margin: 0; font-size: 1.25rem; }
+  .day-header .badge { background: var(--accent); padding: 0.15rem 0.65rem; border-radius: 20px; font-size: 0.78rem; }
+  .day-content { padding: 1.1rem 1.2rem; }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem;
+    margin: 0.8rem 0;
+  }
+  .gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .place-label {
+    font-size: 0.8rem;
+    color: #444;
+    margin: -0.2rem 0 0.6rem;
+    text-align: center;
+  }
+  a.map-link {
+    color: #1a3a5c;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dotted #1a3a5c;
+  }
+  a.map-link:hover { color: var(--accent); }
+  .time-block {
+    border-left: 3px solid var(--time);
+    padding: 0.5rem 0 0.5rem 0.9rem;
+    margin: 0.7rem 0;
+  }
+  .time-block strong.time { color: var(--time); font-size: 0.92rem; }
+  .alts { font-size: 0.88rem; color: #555; margin: 0.3rem 0 0.2rem; }
+  .alts span { background: #eee; padding: 0.1rem 0.4rem; border-radius: 4px; margin-right: 0.3rem; }
+  .note {
+    background: #fff8e6;
+    border-left: 4px solid #f0ad4e;
+    padding: 0.65rem 0.9rem;
+    border-radius: 4px;
+    margin: 0.7rem 0;
+    font-size: 0.9rem;
+  }
+  .bookings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .booking-card {
+    background: #f4f0ea;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+  footer {
+    text-align: center;
+    padding: 1.2rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  @media print {
+    body { background: white; color: black; font-size: 11pt; }
+    header { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; color: white; }
+    .day, .overview { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+    .day-header { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .gallery img { max-height: 120px; }
+    .note { background: #fff8e6 !important; -webkit-print-color-adjust: exact; }
+    a.map-link { color: black; text-decoration: underline; }
+    footer { margin-top: 1rem; }
+    .container { max-width: 100%; padding: 0.5rem; }
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.45rem; }
+    .day-header { flex-direction: column; gap: 0.25rem; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Vietnam Itinerary</h1>
+  <p>12 – 19 November 2026 · 4 people · Printable version</p>
+  <p>Hanoi · Sapa · Halong Bay</p>
+</header>
+
+<div class="container">
+  <div class="overview">
+    <h2>Bookings Snapshot</h2>
+    <div class="bookings">
+      <div class="booking-card"><strong>Flights</strong><br>KUL→HAN 12 Nov 20:30<br>HAN→KUL 19 Nov 21:00</div>
+      <div class="booking-card"><strong>Hanoi</strong><br>Prince II Hotel<br>Old Quarter (Hang Giay)</div>
+      <div class="booking-card"><strong>Sapa</strong><br>Freesia Hotel<br>13–15 Nov</div>
+      <div class="booking-card"><strong>Sapa bus</strong><br>G8 Cabin Sleeper<br>Round-trip · 13 Nov 23:15</div>
+      <div class="booking-card"><strong>Halong</strong><br>Hera Boutique 2D1N<br>16–17 Nov</div>
+    </div>
+    <div class="note">Freesia Sapa starts 13 Nov. You arrive early 14 Nov (night of 13th on the bus). Confirm early check-in or luggage storage with the hotel.</div>
+  </div>
+  <p style="text-align:center; padding:1rem;">Full day-by-day plan with time ranges, maps, and notes is in the main itinerary.html. This print version is optimized for printing.</p>
+</div>
+<footer>
+  Vietnam 12–19 Nov 2026 · Printable version
+</footer>
+</body>
+</html>
